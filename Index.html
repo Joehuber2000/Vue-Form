@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vue Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  
+  <body>
+      
+
+  
+    <div class="body">
+    <div class="container">
+    <h1 class="title">Vue.js Form</h1>
+    <div class="box">
+
+    <form id="signup-form" @submit.prevent="processForm">
+
+     <!-- name -->
+        <div class="field">
+            <label class="name">Name</label>
+            <input type="text" class="input-name" name="name" v-model="name">
+        </div>
+
+     <!-- email -->
+         <div class="field">
+            <label class="email">Email</label>
+            <input type="text" class="input-email" name="email" v-model="email">
+        </div>
+
+     <!-- submit button -->
+        <div class="field-has-text">
+            <button type="submit" class="button">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+	
+
+
+<!-- JS -->
+
+<script>
+
+const app = new Vue({
+   el: '#signup-form',
+   data : {
+       name: '',
+       email: ''
+   },
+
+   
+   methods: {
+       processForm: function() {
+           console.log({  name: this.name, email: this.email })
+           alert('Processing!')
+       }
+   }
+
+});
+
+</script>
+  
+</body>
+  
+</html>
